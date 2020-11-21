@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Preface" pageWidth="451" pageHeight="698" whenNoDataType="AllSectionsNoDetail" columnWidth="451" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2c213e40-f248-46c3-964d-c299f726d6c6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="60"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="505" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="32" width="451" height="97" uuid="ede4bc3e-d0d3-45ac-a9a6-6d29953a47f8"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Short listing is a pre-tender process that provides for a shortlist of providers from which providers are obtained to bid. Short listing is used where works, services or supplies are of a routine nature or bidding is for a group of similar contracts. Short listing shall be open to all providers and providers shall be invited using a short list notice.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="132" width="451" height="52" uuid="2ab7c105-c028-4ba6-ae04-f8c5311feba9"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[A short list notice shall be published in at least one publication of wide circulation to ensure effective competition.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="195" width="451" height="26" uuid="d014eec0-7898-45d1-a658-c686b75b26e3"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[The short listing document is divided into:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="373" width="451" height="34" uuid="c8704e89-af12-4e13-860f-4a6256844111"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Appendices:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="228" width="451" height="134" uuid="73338eb7-b91f-4ca5-a8b1-5be3be7342ad"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[• Part I: General Part
+
+• Part II: Instructions to Bidders
+
+• Part III: Preparation of Applications
+
+• Part IV: Submission of Applications
+
+• Part V: Opening and Evaluation of  Applications
+
+• Part VI: Short listing
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="407" width="451" height="57" uuid="9bde8ec0-8d7c-4f36-b3c8-01fdc454f191"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[A: Application Submission Sheet
+B: Statement of Requirements
+C: Evaluation Criteria
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="451" height="32" uuid="0910fb9a-1354-43bf-8ecf-2ff13922019d"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Preface]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

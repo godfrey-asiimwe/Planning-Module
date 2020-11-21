@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FORMA2" language="groovy" pageWidth="451" pageHeight="698" columnWidth="451" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4d3ebe0d-006b-413d-83a5-43e40b652356">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="refNo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+PrequalificationBids.disposingEntityName,
+PrequalificationBids.country,
+PrequalificationBids.postalCode,
+PrequalificationBids.roomNumber,
+PrequalificationBids.streetAddress,
+PrequalificationBids.townCity,
+PrequalificationBids.submissionDate,
+PrequalificationBids.submissionTime,
+PrequalificationBids.openingDate,
+PrequalificationBids.openingTime,
+PrequalificationFinancialYears.name AS financialYear
+FROM
+PrequalificationBids
+INNER JOIN PrequalificationFinancialYears
+ON PrequalificationBids.financialYear_id=PrequalificationFinancialYears.id
+WHERE
+refNo=$P{refNo}]]>
+	</queryString>
+	<field name="disposingEntityName" class="java.lang.String"/>
+	<field name="country" class="java.lang.String"/>
+	<field name="postalCode" class="java.lang.String"/>
+	<field name="roomNumber" class="java.lang.String"/>
+	<field name="streetAddress" class="java.lang.String"/>
+	<field name="townCity" class="java.lang.String"/>
+	<field name="submissionDate" class="java.sql.Timestamp"/>
+	<field name="submissionTime" class="java.lang.String"/>
+	<field name="openingDate" class="java.sql.Timestamp"/>
+	<field name="openingTime" class="java.lang.String"/>
+	<field name="financialYear" class="java.lang.String"/>
+	<variable name="part1" class="java.lang.String">
+		<variableExpression><![CDATA["<p>Name of Company:</p>"
++"<p>[insert full legal name]</p>"
+
++"<p>Physical address:</p>"
++"<p>[insert street/ number/ town or city/ country]</p>"
+
+
++"<p>Postal address:</p>"
+
+
++"<p>Telephone number:</p>"
+
+
++"<p>Telefax number:</p>"
+
+
++"<p>Email:</p>"
+
++"<p>Description of the Company’s activities:</p>"
+
+
+
+
+
+
+
+
+
++"<p>Number of years of experience in the provision of the works, services or supplies under reference</p>"
+
+
+
+
+
+
++"<p>In case of a Joint Venture, the following documentation shall be required for each member of the joint venture:</p>"
++"<p>a.	a copy of the Bidder’s Trading licence or equivalent;</p>"
++"<p>b.	a copy of the Bidder’s Certificate of Registration or equivalent;</p>"
++"<p>c.	a copy of the Bidder’s income tax clearance certificate or equivalent;</p>"
++"<p>d.	a copy of the Bidders VAT registration or equivalent;</p>"
++"<p>e.	Power of Attorney of the signatory(ies) of the bid authorising signature of the bid on behalf of the joint venture;</p>"
++"<p>f.	a certified copy of the Joint Venture Agreement, which is legally binding on all partners, showing that all partners shall be jointly and severally liable and one of the partners will be nominated as being in charge, authorised to incur liabilities, and receive instructions for and on behalf of any and all partners of the joint venture.</p>"
+
++"<p>The Applicant’s authorised representative for information is:</p>"
+
++"<p>Name: [insert full legal name]</p>"
+
++"<p>Address: [insert street/ number/ town or city/ country]</p>"
+
++"<p>Telephone/Fax  numbers: [insert telephone/fax numbers, including country and city codes]</p>"
+
++"<p>E-mail address: [indicate e-mail address]</p>"
+
++"<p>Describe your company’s access from other sources (name the sources/companies) to works, services or supplies it does not carry out or does not have in stock, and the delivery schedule in these cases</p>"
+
+
++"<p>What is the time schedule of providing and completing the works, services or supplies being applied for?</p>"
+
+
++"<p>Please indicate here or attach an organization chart showing the company structure including key personnel</p>"
+
+
++"<p>What are the specific types of equipment/vehicles that the company is certified to work on? (E.g. Motor vehicle, equipment maintenance, e.t.c.)</p>"
+
+
++"<p>Please indicate the additional works, services or supplies that the company can provide e.g. mobile repair, vehicle breakdown, pickup service etc</p> <hr/>"]]></variableExpression>
+	</variable>
+	<variable name="STRUCTURE" class="java.lang.String">
+		<variableExpression><![CDATA["<hr>"
++"<p>STRUCTURE AND ORGANIZATION</p>"
++"<hr>"]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="109" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="38" width="451" height="20" uuid="8416fde1-bbf6-4a47-91da-f587fcd7d637"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{STRUCTURE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="67" width="451" height="35" uuid="8f800e19-6e93-4d86-af76-d9c94077aef4"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{part1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="4" width="451" height="30" uuid="27f52396-5cd0-427f-883d-c97c5faa6e73"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORM A2: APPLICANT INFORMATION SHEET]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

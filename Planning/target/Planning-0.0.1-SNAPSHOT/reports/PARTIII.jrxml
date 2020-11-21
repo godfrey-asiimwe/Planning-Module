@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PARTIII" language="groovy" pageWidth="451" pageHeight="698" columnWidth="451" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d22180e4-3399-45d9-9476-da3c99baa4f1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="refNo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+PrequalificationBids.disposingEntityName,
+PrequalificationBids.country,
+PrequalificationBids.postalCode,
+PrequalificationBids.roomNumber,
+PrequalificationBids.streetAddress,
+PrequalificationBids.townCity,
+PrequalificationFinancialYears.name AS financialYear
+FROM
+PrequalificationBids
+INNER JOIN PrequalificationFinancialYears
+ON PrequalificationBids.financialYear_id=PrequalificationFinancialYears.id
+WHERE
+refNo=$P{refNo}]]>
+	</queryString>
+	<field name="disposingEntityName" class="java.lang.String"/>
+	<field name="country" class="java.lang.String"/>
+	<field name="postalCode" class="java.lang.String"/>
+	<field name="roomNumber" class="java.lang.String"/>
+	<field name="streetAddress" class="java.lang.String"/>
+	<field name="townCity" class="java.lang.String"/>
+	<field name="financialYear" class="java.lang.String"/>
+	<variable name="3.1" class="java.lang.String">
+		<variableExpression><![CDATA["<p>The Application prepared by the Applicant, as well as all correspondence and documents relating to the Application exchanged by the Applicant and the <b>"+$F{disposingEntityName}+"</b>, shall be written in English. Supporting documents and printed literature provided by the Applicant may be in another language provided they are accompanied by an accurate translation of the relevant passages in English, in which case, for purposes of interpretation of the Application, the translation shall govern.</p>"]]></variableExpression>
+	</variable>
+	<variable name="3.2" class="java.lang.String">
+		<variableExpression><![CDATA["<p>The Applicant shall provide as part of its Application, the documentary   evidence of the Applicant's legal status, financial, technical and production capability to provide the services if a contract is awarded in the format provided in the Application Submission Sheet (Forms A1 – A7). Failure to provide the required information shall result in disqualification</p>"]]></variableExpression>
+	</variable>
+	<variable name="3.3.1" class="java.lang.String">
+		<variableExpression><![CDATA["<p>3.3.1 The Applicant is requested to submit its Short listing Documents (included in Annex A) in one envelope marked: “Short listing Documents for the provision of works, services or supplies to <b>"+$F{disposingEntityName}+"</b> for the Financial Years <b>"+$F{financialYear}+"</b>.”The envelope shall contain one (1) original and two (2) copies.</p>"]]></variableExpression>
+	</variable>
+	<variable name="3.3.2" class="java.lang.String">
+		<variableExpression><![CDATA["<p>3.3.2 	The original and the copies of the Application shall be typed or written in indelible ink, and shall be signed by the Applicant or a person or persons duly authorized to sign the short listing documents. All pages of the Application, except for unmended printed literature, shall be initialed by the person or persons signing the Application and each page numbered.</p>"]]></variableExpression>
+	</variable>
+	<variable name="3.3.3" class="java.lang.String">
+		<variableExpression><![CDATA["<p>3.3.3 Any interlineations, erasures, or overwriting shall be valid only if they are initialed by the person or persons signing the Application. </p>"]]></variableExpression>
+	</variable>
+	<variable name="3.3.4" class="java.lang.String">
+		<variableExpression><![CDATA["<p>3.3.4 All Pages of the proposal <b><u>MUST</u></br</b> be numbered sequentially starting with page number one (1) being the cover page.</p>"]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="325" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="39" width="451" height="28" uuid="9bce6449-4f4d-48e7-bd7c-8f54bdaf1319"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[3.1	Language of Application ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="106" width="451" height="29" uuid="746fcc1b-30d8-4816-be01-3f66e4f33671"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[3.2	Documents Establishing Applicant’s Eligibility and Qualifications]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="164" width="451" height="29" uuid="0cfe652a-c42b-4cba-b3b3-fe4d424fb66a"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[3.3	Format and Signing of Applications]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="72" width="451" height="31" uuid="ffa93b44-89be-486f-84fb-8e8fba39ee50"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{3.1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="136" width="451" height="24" uuid="daec1bcf-7ff8-4f59-927c-57669c2bfb9e"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{3.2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="193" width="451" height="25" uuid="da08768f-864d-4138-a543-09d01712ae6f"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement markup="html">
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{3.3.1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="224" width="451" height="27" uuid="253f578b-f64a-4f1f-8bfc-1747bdf12d1b"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{3.3.2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="256" width="451" height="28" uuid="a2152634-4ead-4d57-973c-f19e8c2b9a62"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{3.3.3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="289" width="451" height="26" uuid="bae61e1b-aa28-47e9-b11c-a553db8ed787"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{3.3.4}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="5" width="451" height="30" uuid="5f15aef6-0a44-4e14-80b5-a06a7500b8f4"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PART III: 	PREPARATION OF APPLICATIONS]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

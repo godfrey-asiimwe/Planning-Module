@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PARTV" language="groovy" pageWidth="451" pageHeight="698" columnWidth="451" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="8313a8f5-8337-40b3-babb-1300c691c0df">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="refNo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+PrequalificationBids.disposingEntityName,
+PrequalificationBids.country,
+PrequalificationBids.postalCode,
+PrequalificationBids.roomNumber,
+PrequalificationBids.streetAddress,
+PrequalificationBids.townCity,
+PrequalificationBids.submissionDate,
+PrequalificationBids.submissionTime,
+PrequalificationBids.openingDate,
+PrequalificationBids.openingTime,
+PrequalificationFinancialYears.name AS financialYear
+FROM
+PrequalificationBids
+INNER JOIN PrequalificationFinancialYears
+ON PrequalificationBids.financialYear_id=PrequalificationFinancialYears.id
+WHERE
+refNo=$P{refNo}]]>
+	</queryString>
+	<field name="disposingEntityName" class="java.lang.String"/>
+	<field name="country" class="java.lang.String"/>
+	<field name="postalCode" class="java.lang.String"/>
+	<field name="roomNumber" class="java.lang.String"/>
+	<field name="streetAddress" class="java.lang.String"/>
+	<field name="townCity" class="java.lang.String"/>
+	<field name="submissionDate" class="java.sql.Timestamp"/>
+	<field name="submissionTime" class="java.lang.String"/>
+	<field name="openingDate" class="java.sql.Timestamp"/>
+	<field name="openingTime" class="java.lang.String"/>
+	<field name="financialYear" class="java.lang.String"/>
+	<variable name="5.1" class="java.lang.String">
+		<variableExpression><![CDATA["<b>5.1	Opening of Applications by the "+$F{disposingEntityName}+"</b>"]]></variableExpression>
+	</variable>
+	<variable name="5.1.1" class="java.lang.String">
+		<variableExpression><![CDATA["<p>5.1.1 The <b>"+$F{disposingEntityName}+"</b> will read out Applicants’ particulars in the presence of Applicants' representatives who choose to attend, on the <b>"+$F{openingDate}+" "+$F{openingTime}+"</b>. The Applicants' representatives who are present shall sign a register as evidence for their attendance.</p>"]]></variableExpression>
+	</variable>
+	<variable name="5.1.2" class="java.lang.String">
+		<variableExpression><![CDATA["<p>5.1.2 No Application shall be rejected at Application opening, except for late Applications, which shall be returned unopened to the Applicants. </p>"]]></variableExpression>
+	</variable>
+	<variable name="5.1.3" class="java.lang.String">
+		<variableExpression><![CDATA["<p>5.1.3 The "+$F{disposingEntityName}+" will prepare minutes for the Application opening.</p>"]]></variableExpression>
+	</variable>
+	<variable name="5.2" class="java.lang.String">
+		<variableExpression><![CDATA["<p>(a)	The "+$F{disposingEntityName}+" will carry out the evaluation of proposals on the basis of their responsiveness to:</p>"
++"<ul>"
++"<li>Legal Status</li>"
++"<li>Tax  Payment</li> "
++"<li>Financial Position – Presentation of copies of Audited reports for the last two years.</li>"
++"<li>Specific evaluation criteria for each category as given in Appendix C.</li>"
++"</ul>"
++"<p>(b)	Any application that fails to meet the requirements in 5.2 (a) will be considered unsuitable and shall be rejected at this stage.  The Procuring and Disposing Entity shall notify the Applicant of the rejection of their application.</p>"]]></variableExpression>
+	</variable>
+	<variable name="5.3.1" class="java.lang.String">
+		<variableExpression><![CDATA["<p>5.3.1 During evaluation of the Applications, the "+$F{disposingEntityName}+" may, at its discretion, ask the Applicant for clarification of its Application. A request for clarification shall be signed and sent to a bidder by the chairperson of the evaluation committee and all requests for clarifications shall be copied to all bidders for information purposes only and noted in the evaluation report.</p>"]]></variableExpression>
+	</variable>
+	<variable name="5.3.2" class="java.lang.String">
+		<variableExpression><![CDATA["<p>5.3.2 A bidder shall be instructed to reply to clarifications in writing within a specified time, addressing their responses to the head of the procurement and disposal unit.</p>"]]></variableExpression>
+	</variable>
+	<variable name="5.3.3" class="java.lang.String">
+		<variableExpression><![CDATA["<p>5.3.3 The head of the procurement and disposal unit shall ensure that all replies are promptly forwarded to the chairperson of the evaluation committee.</p>"]]></variableExpression>
+	</variable>
+	<variable name="5.3.4" class="java.lang.String">
+		<variableExpression><![CDATA["<p>5.3.4 Failure of a bidder to respond to a request for clarification may result in the rejection of its bid.</p>"]]></variableExpression>
+	</variable>
+	<variable name="5.4.1" class="java.lang.String">
+		<variableExpression><![CDATA["<p>5.4.1 No Applicant shall contact the "+$F{disposingEntityName}+" on any matter relating to its Application from the time of Application opening to short listing of Applicants.</p>"]]></variableExpression>
+	</variable>
+	<variable name="5.4.2" class="java.lang.String">
+		<variableExpression><![CDATA["<p>5.4.2 Any effort by the Applicant to influence the "+$F{disposingEntityName}+" in its decisions on the Application evaluation may result in the rejection of the Application.</p>"]]></variableExpression>
+	</variable>
+	<variable name="5.5.1" class="java.lang.String">
+		<variableExpression><![CDATA["<p>5.5.1 Information relating to the evaluation of applications, and recommendation for short listing, shall not be disclosed to Applicants or any other persons not officially concerned with such process until the notification of short listing is made to all Applicants.</p>"]]></variableExpression>
+	</variable>
+	<variable name="5.5.2" class="java.lang.String">
+		<variableExpression><![CDATA["<p>5.5.2 From the deadline for submission of applications to the time of notification of the results of the short listing, any Applicant that wishes to contact the Procuring and Disposing Entity on any matter related to the short listing process, may do so but only in writing. </p>"]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="550" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="36" width="451" height="22" uuid="59c4d05d-aede-4f49-af0a-890149aec7f7"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{5.1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="62" width="451" height="32" uuid="c053b1cf-571d-4394-b40d-42df9d2b0796"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{5.1.1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="98" width="451" height="31" uuid="07b5df17-d7ce-4a62-8c81-f83f4ecdd37e"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{5.1.2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="135" width="451" height="25" uuid="9097ba04-8327-4ce8-ad88-35b088163f62"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{5.1.3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="170" width="451" height="20" uuid="81566874-3456-4aca-ad3d-525ce8862a37"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[5.2	Evaluation of Applications:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="194" width="451" height="30" uuid="3c947ad5-4242-437c-b9db-e766785ab20a"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{5.2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="229" width="451" height="23" uuid="8eed1c4d-ffc8-4eab-b130-96bdd8f7b9a2"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[5.3	Clarification of Applications ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="255" width="451" height="24" uuid="33bf9672-fc3b-4c66-a6b3-28bad8e5bfa3"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{5.3.1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="283" width="451" height="24" uuid="a13a2e1a-6284-43f7-b59d-cce023f06f51"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{5.3.2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="310" width="451" height="24" uuid="1cd4560a-349f-4660-a8db-a4ece3b54e76"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{5.3.3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="339" width="451" height="24" uuid="95865578-e7cf-4d41-97a4-ed9b5256eb05"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{5.3.4}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="368" width="451" height="23" uuid="2a9c332e-417b-4d9c-8387-6fb1d93fe06c"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[5.4	Contacting the Procuring and Disposing Entity]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="395" width="451" height="32" uuid="43295c5a-ceb9-4859-bc11-6255edbda854"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{5.4.1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="429" width="451" height="27" uuid="ea6bedb1-dfa3-4687-9e4d-fe554b39d45c"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{5.4.2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="462" width="451" height="23" uuid="b07e6e34-8912-4b64-bb5b-f812104927b2"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[5.5	Confidentiality]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="488" width="451" height="25" uuid="55fe8a1a-5207-4cb5-aacc-5ff9d29ad761"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{5.5.1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="518" width="451" height="24" uuid="7406e62f-5279-4d2a-a073-c6d953cc2ab8"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{5.5.2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="3" width="451" height="30" uuid="eeaf2e05-8931-4a2c-892b-4ab54d56e23c"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PART V: 	OPENING AND EVALUATION OF APPLICATIONS]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

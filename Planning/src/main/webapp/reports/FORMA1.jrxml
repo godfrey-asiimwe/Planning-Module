@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FORMA1" language="groovy" pageWidth="451" pageHeight="698" columnWidth="451" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="8573e844-a66c-4d57-a011-bcbebdd8008d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="refNo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+PrequalificationBids.disposingEntityName,
+PrequalificationBids.country,
+PrequalificationBids.postalCode,
+PrequalificationBids.roomNumber,
+PrequalificationBids.streetAddress,
+PrequalificationBids.townCity,
+PrequalificationBids.submissionDate,
+PrequalificationBids.submissionTime,
+PrequalificationBids.openingDate,
+PrequalificationBids.openingTime,
+PrequalificationFinancialYears.name AS financialYear
+FROM
+PrequalificationBids
+INNER JOIN PrequalificationFinancialYears
+ON PrequalificationBids.financialYear_id=PrequalificationFinancialYears.id
+WHERE
+refNo=$P{refNo}]]>
+	</queryString>
+	<field name="disposingEntityName" class="java.lang.String"/>
+	<field name="country" class="java.lang.String"/>
+	<field name="postalCode" class="java.lang.String"/>
+	<field name="roomNumber" class="java.lang.String"/>
+	<field name="streetAddress" class="java.lang.String"/>
+	<field name="townCity" class="java.lang.String"/>
+	<field name="submissionDate" class="java.sql.Timestamp"/>
+	<field name="submissionTime" class="java.lang.String"/>
+	<field name="openingDate" class="java.sql.Timestamp"/>
+	<field name="openingTime" class="java.lang.String"/>
+	<field name="financialYear" class="java.lang.String"/>
+	<variable name="part1" class="java.lang.String">
+		<variableExpression><![CDATA["<p>Date: [insert day, month, year]</p>"
++"<p>To: [insert full name of Procuring and Disposing Entity]</p>"
++"<p>We, the undersigned declare that: </p>"
++"<p>(a)	We have examined and have no reservations to the short listing document, including Addenda No:……..., [insert the number and issuing date of each Addenda];</p>"
++"<p>(b)	We hereby apply to be short listed for the following works, services or supplies:</p>"]]></variableExpression>
+	</variable>
+	<variable name="part2" class="java.lang.String">
+		<variableExpression><![CDATA["<p>(c) We, including any subcontractors or providers for any part of the contract or contracts resulting from this short listing process, are eligible to participate in public procurement;</p>"
++"<p>(d) We undertake to abide by the Code of Ethical Conduct for Providers and Providers during the procurement process and the execution of any resulting contract;</p>"
++"<p>(e) We, including any subcontractors or providers for any part of the contract or contracts resulting from this short listing process, have nationals from the following eligible countries [insert the nationality of the Applicant, including that of all parties in case of a joint venture and the nationality of any subcontractors, if applicable];</p>"
++"<p>(f) We, including any subcontractors or providers for any part of the contract or contracts resulting from this short listing process do not have any conflict of interest, and are not associated, nor have been associated in the past, directly or indirectly, with the consultant or any other entity that has prepared the design or technical specifications of the Supplies;</p>"
++"<p>(g) We, our affiliates or subsidiaries, including any subcontractors for any part of the contract or contracts resulting from this short listing process, have not been suspended by the Public Procurement and Disposal of Public Assets Authority in Uganda from participating in public procurement; </p>"
++"<p>(h) We are not a government owned entity, or if we are, we meet the requirements of 2.3.9.</p>"
++"<p>(i) We declare that the following commissions, gratuities, or fees have been paid or are to be paid with respect to the short listing process, the corresponding bidding process or execution of the Contract: [insert complete name of each Recipient, their full address, the reason for which each commission or gratuity was paid and the amount and currency of each such commission or gratuity. If none has been paid or is to be paid, indicate “none”.]</p>"]]></variableExpression>
+	</variable>
+	<variable name="part3" class="java.lang.String">
+		<variableExpression><![CDATA["<p>(j) We understand that you may amend the scope and value of any contracts to be bid or cancel the short listing process at any time and that you are neither bound to accept any application that you may receive nor to invite the short listed applicants to bid for the contract or contracts, which are the subject of this short listing, without incurring any liability to the Applicants;</p>"
++"<p>(k) We understand that qualification information will be subject to verification through a post-qualification process prior to any award of contract;</p>"
++"<p>(l) We hereby authorise you and your authorised representatives, to conduct any enquiries or investigations to verify the statements, documents and information submitted in connection with this application and to seek clarification from our bankers and clients regarding any financial and technical aspects. This Application Submission Sheet will also serve as authorisation to any individual or authorised representative of any institution referred to in the supporting information to provide such information deemed necessary and as requested by yourselves to verify statement s and information provided in this application.</p>"
++"<p>Signed: [signature of person whose name and capacity are shown below]</p>"
++"<p>Name: [insert complete name of person signing the application]</p>"
++"<p>In the capacity of [insert legal capacity of person signing the application] </p>"
++"<p>Duly authorised to sign the application for and on behalf of: [insert complete name of Applicant/Joint Venture]</p>"
+
++"<p>Dated on ____________ day of __________________, _______ [insert date of signing]</p>"]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="426" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="42" width="451" height="30" uuid="20d3d77b-adef-43d1-b163-2cc143350ede"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{part1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="72" width="135" height="33" forecolor="#000000" backcolor="#CCCCCC" uuid="cba2cc06-1fcc-4e07-854a-d14e3c3d79ab"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reference Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="135" y="72" width="316" height="33" forecolor="#000000" backcolor="#CCCCCC" uuid="8be1e270-b86f-45a8-94b2-27e4192e7c0a"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description of Works, Services or Supplies]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="135" y="105" width="316" height="30" uuid="e8578e39-e093-407e-9c32-58c6f0999153"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="105" width="135" height="30" uuid="b451853b-77ce-4242-ae88-00b67909a7eb"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="135" width="135" height="33" uuid="b5430ff3-99be-4fef-8d08-8468d72dd9e8"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="135" y="135" width="316" height="33" uuid="f1d47cce-eb26-446f-923e-5d8fc9648056"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="135" y="168" width="316" height="32" uuid="b61323f2-653d-4be4-8d9a-172756d303d9"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="168" width="135" height="32" uuid="083bf840-4b05-4886-ba4e-774eda4d47a0"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="206" width="451" height="30" uuid="120992ea-5f58-4cbc-804f-87d79005a27f"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{part2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="248" width="112" height="48" backcolor="#CCCCCC" uuid="ab9f2e19-d923-4d6a-b83e-3927486d85f8"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name of Recipient]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="112" y="248" width="121" height="48" backcolor="#CCCCCC" uuid="40159e78-f0d8-4d67-8305-16e3da93aaf4"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="233" y="248" width="112" height="48" backcolor="#CCCCCC" uuid="cd066b2f-f807-4ccc-9b47-a551bf83821d"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purpose/Reason]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="345" y="248" width="106" height="48" backcolor="#CCCCCC" uuid="03762a68-4670-4205-a028-104341cf8211"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount & currency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="233" y="296" width="112" height="35" uuid="e28b14e1-870f-4d59-9fda-963d80c00ed1"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="112" y="296" width="121" height="35" uuid="3a7704c4-b33e-4fc8-9b9e-a0c940fa6966"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="296" width="112" height="35" uuid="5504284b-43de-4ac0-96af-258ed39531fa"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="345" y="296" width="106" height="35" uuid="36678eca-7f50-4a4a-ad39-1f36043c1489"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="233" y="331" width="112" height="35" uuid="154f6685-0bf8-449d-8760-f649e207d0b6"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="345" y="331" width="106" height="35" uuid="ade62495-3d75-4e01-a26a-ddd802978b1e"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="112" y="331" width="121" height="35" uuid="ace6a0c3-ee90-4809-a1e8-35dd8580bb21"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="331" width="112" height="35" uuid="65212307-0702-4cbd-84c5-e74ba487ed80"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="369" width="451" height="30" uuid="9e88a545-f88c-41a1-af00-9df8f4dea6cc"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{part3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="5" width="451" height="30" uuid="a72cf0db-879e-4c3a-8f2c-935393647287"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ANNEX A: 	FORM A1: APPLICATION SUBMISSION SHEET]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tableOfContents" pageWidth="451" pageHeight="698" whenNoDataType="AllSectionsNoDetail" columnWidth="451" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="652251d4-3cdd-4435-b84d-681b0e1f847f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="590" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="451" height="590" uuid="eea4170a-6f3b-45bd-a424-653b5fd1f699"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[
+Preface							3
+PART I: 	GENERAL PART					4
+1.1	Scope of Application					4
+1.2	Source of Funds					4
+1.3	Corrupt Practices					4
+PART II: 	INSTRUCTIONS TO PROVIDERS				6
+2.1	Introduction						6
+2.2	Objectives						6
+2.3	Eligible Applicants and Countries				6
+2.4	Cost of Applying					8
+2.5	Clarification of Short listing Documents				8
+2.6 	Amendment of Short listing Document				8
+PART III: 	PREPARATION OF APPLICATIONS				10
+3.1	Language of Application					10
+3.2	Documents Establishing Applicant’s Eligibility and Qualifications		10
+3.3	Format and Signing of Applications				10
+PART IV: 	SUBMISSION OF APPLICATIONS				11
+4.1	Sealing and Labelling of Applications				11
+4.2	Deadline for Submission of Applications				11
+4.3	Late Applications					11
+PART V: 	OPENING AND EVALUATION OF APPLICATIONS			12
+5.1	Opening of Applications by the [Procuring and Disposing Entity]		12
+5.2	Evaluation of Applications:					12
+5.3	Clarification of Applications				12
+5.4	Contacting the Procuring and Disposing Entity			13
+5.5	Confidentiality					13
+PART VI:	SHORT LISTING					14
+6.1	Notification to the Short listed Applicants			14
+6.2	Inspection						14
+6.3	Currency						14
+6.4	Changes in Qualifications of Applicants				14
+ANNEX A: 	FORM A1: APPLICATION SUBMISSION SHEET			15
+ANNEX B: 	STATEMENT OF REQUIREMENTS				24
+ANNEX C:	 EVALUATION CRITERIA					27
+
+]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
